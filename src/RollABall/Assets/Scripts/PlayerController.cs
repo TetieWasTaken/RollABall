@@ -28,4 +28,12 @@ public class PlayerController : MonoBehaviour
         moveX = movementVector.x;
         moveY = movementVector.y;
     }
+
+    void OnTriggerEnter(Collider collided)
+    {
+       if (collided.gameObject.CompareTag("Pickup"))
+       {
+           collided.gameObject.SetActive(false);
+       }
+    }
 }
